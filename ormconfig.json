@@ -1,7 +1,7 @@
 {
     "name": "default",
     "type": "postgres",
-    "host": "db",
+    "host": "localhost",
     "port": 5432,
     "username": "adminer",
     "password": "123456",

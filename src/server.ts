@@ -11,4 +11,4 @@ app.use(router);
 app.use(function(req, res, next) {res.status(404).json({error: "this route not exist"})})
 app.use((err: Error, req:Request, res: Response, next: NextFunction)=>{if(err instanceof Error) { return res.status(400).json({err: err.message}) }res.status(500).json({status: "error", message: "Internal Server Error"})})
 
-app.listen(3000)
+app.listen(3001)
