@@ -1,0 +1,15 @@
+{
+    "name": "default",
+    "type": "postgres",
+    "host": "db",
+    "port": 5432,
+    "username": "adminer",
+    "password": "123456",
+    "database": "projeto-teste",
+    "entities": ["src/entities/*.ts"],
+    "migrations": ["src/database/migrations/*.ts"],
+    "cli": {
+        "entitiesDir": "src/entities",
+        "migrationsDir": "src/database/migrations"
+    }
+}

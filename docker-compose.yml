@@ -1,0 +1,26 @@
+version: '3.9'
+
+services: 
+    app:
+        build: .
+        restart: always
+        volumes:
+            - ./:/work
+        ports: 
+            - '3000:3000'
+        links: 
+            - db
+        depends_on: 
+            - db
+        command: npm run dev
+    db:
+        image: postgres:13.3-alpine
+        restart: always
+        volumes:
+            - /api/code/data-db:/var/lib/postgresql/data
+        ports: 
+            - '5432:5432'
+        environment: 
+            POSTGRES_USER: 'adminer'
+            POSTGRES_PASSWORD: 123456
+            POSTGRES_DB: 'projeto-teste'
