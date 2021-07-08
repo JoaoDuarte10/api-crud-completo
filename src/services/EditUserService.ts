@@ -14,6 +14,8 @@ class EditUserService {
         const editUserRepositories = getCustomRepository(UsersReposirories);
         const newUser = await editUserRepositories.findOne(id);
 
+        if(!newUser) throw new Error("the id doesn't valid")
+
         newUser.name = name;
         newUser.email = email;
         newUser.password = password;

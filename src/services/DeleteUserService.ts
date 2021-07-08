@@ -6,15 +6,12 @@ class DeleteUserService {
         const userRepositories = getCustomRepository(UsersReposirories);
         const user = await userRepositories.findOne(id);
         
-        if(!id) return {message: "informe o id corretamente"}
-        if(!user) return {message: "o id não é válido"}
+        if(!id) return {message: "inform the id correctly"}
+        if(!user) return {message: "the id doesn't valid"}
 
-        try {
-            await userRepositories.remove(user)
-            return {message: "user deleted"}
-        } catch (error) {
-            return error
-        }
+        await userRepositories.remove(user).catch(error => error)
+
+        return {message: "user deleted"}
     }
 }
 

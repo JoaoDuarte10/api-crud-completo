@@ -17,7 +17,7 @@ router.get('/', listUserController.handle)
 router.get('/find-user', findUserController.handle)
 
 router.post('/user', createUserController.handle)
-router.post('/edit', editUserController.handle)
+router.post('/edit-user', editUserController.handle)
 router.delete('/delete-user', deleteUserController.handle)
 
 export { router }
