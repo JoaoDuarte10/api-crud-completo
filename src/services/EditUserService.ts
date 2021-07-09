@@ -14,6 +14,7 @@ class EditUserService {
         const editUserRepositories = getCustomRepository(UsersReposirories);
         const newUser = await editUserRepositories.findOne(id);
 
+        if(!id || !name || !email || !password) throw new Error("Preencha todos os campos")
         if(!newUser) throw new Error("the id doesn't valid")
 
         newUser.name = name;
